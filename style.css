@@ -1,0 +1,79 @@
+@font-face {
+    font-family: 'Digital';
+    src: url('digital-7.ttf')  format('truetype')
+}
+
+.countdown-wrapper {
+    font-family: 'Digital', sans-serif;
+    font-size: 100px;
+    display: flex;
+    background-color: black;
+    width: fit-content;
+}
+
+.box {
+    width: 0.5em;
+    text-align: right;
+    color: red;
+    /* background-color: black; */
+    display: flex;
+    justify-content: right;
+    align-items: center'
+}
+
+#c {
+    width: 0.1em;
+    text-align: center;
+}
+
+.logo_img {
+    width: 90%;
+}
+
+.logo {
+    width: 210px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 8px;
+    opacity: 0;
+    transition: opacity 0.5s;
+    height: 100px;
+}
+
+#explode {
+    position: relative;
+    opacity: 1;
+    transition: opacity 0.3s;
+    width: 210px;
+}
+
+.icons {
+    display: flex;
+    width: 210px;
+    border-top: 2px solid white;
+    justify-content: space-around;
+    align-items: center;
+    background-color: black;
+    font-size: 24px; 
+}
+
+.icon {
+    display: flex;
+    justify-content: center;
+    width: 67px;
+    margin: 2px;
+}
+
+.icon:not(:first-child) {
+    border-left: 2px solid white;
+}
+
+.icon {
+    border: 1px solid white;
+}
+
+body {
+    background-color:black;
+}

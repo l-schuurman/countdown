@@ -1,0 +1,66 @@
+<html>
+
+<head>
+    <!-- <script type="module" src="barbImports.js"></script> -->
+    <!-- <script type="module">
+        async function loadMyData() {
+            const { default: data } = await import("./barbData.json", { assert: { type: "json" } });
+            const { default: villageIDs } = await import("../gamedata/village129IDcoord.json", { assert: { type: "json" } });
+            window.data = data;
+            window.villageIDs = villageIDs;
+        }
+        loadMyData();
+    </script> -->
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="explode" data-dis-type="simultaneous" data-dis-particle-type="ExplodingParticle">
+        <div class="countdown-wrapper">
+            <div id="a" class="box">0</div>
+            <div id="b" class="box">5</div>
+            <div id="c" class="box">:</div>
+            <div id="d" class="box">0</div>
+            <div id="e" class="box">0</div>
+        </div>
+    </div>
+
+    <div class="logo"><img class="logo_img" src="Logo_Name_White.png"></img></div>
+
+    <div class="icons">
+      <div id="play" class="icon">▶️</div>
+      <div id="pause" class="icon">⏸️</div>
+      <div id="restart" class="icon">🔄</div>
+    </div>
+
+    <script src="script.js"></script>
+
+    <script>
+      document.getElementById("play").addEventListener("click", play);
+      document.getElementById("pause").addEventListener("click", pause);
+      document.getElementById("restart").addEventListener("click", restart);
+    </script>
+
+    <script type="text/javascript" src="html2canvas.js"></script>
+    <script type="text/javascript" src="disintegrate.js"></script>
+    <script type="text/javascript">
+        disintegrate.init();
+        
+        if(document.querySelector('[data-dis-type="simultaneous"]')) {
+          // If you do anything with dises, you need to wait for them to 
+          // all finish loading
+          window.addEventListener("disesLoaded", function() {
+            disintegrate.dises.forEach(function(disObj) {
+              if(disObj.elem.dataset.disType === "simultaneous") {
+                disObj.elem.addEventListener("click", function(e) {
+                  disintegrate.createSimultaneousParticles(disObj);
+                });
+              }
+            });
+          });
+        }
+        </script>
+</body>
+
+</html>
